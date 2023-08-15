@@ -9,7 +9,6 @@ import android.view.ViewGroup;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.ProgressBar;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -31,8 +30,9 @@ public class HomeFragment extends Fragment {
 
         final WebView homeWebView = binding.idWebViewHome;
         final ProgressBar loadingPB=binding.idPBLoading;
-        homeWebView.loadUrl("https://www.geeksforgeeks.org");
+        homeWebView.loadUrl("https://www.geeksforgeeks.org/");
         homeWebView.setWebViewClient(new WebViewClient(){
+
             @Override
             public void onPageStarted(WebView view, String url, Bitmap favicon) {
                 super.onPageStarted(view, url, favicon);
@@ -50,12 +50,10 @@ public class HomeFragment extends Fragment {
             @Override
             public boolean onKey(View v, int keyCode, KeyEvent event) {
                 if(event.getAction()==KeyEvent.ACTION_DOWN){
-                    switch (keyCode){
-                        case KeyEvent.KEYCODE_BACK:
-                            if(homeWebView.canGoBack()){
-                                homeWebView.goBack();
-                            }
-
+                    if(keyCode==KeyEvent.KEYCODE_BACK){
+                        if(homeWebView.canGoBack()){
+                            homeWebView.goBack();
+                        }
                     }
                 }
                 return false;

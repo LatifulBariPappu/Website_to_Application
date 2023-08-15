@@ -9,8 +9,6 @@ import android.view.ViewGroup;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.ProgressBar;
-import android.widget.TextView;
-
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
@@ -55,7 +53,6 @@ public class SlideshowFragment extends Fragment {
                             if(practiceWebView.canGoBack()){
                                 practiceWebView.goBack();
                             }
-
                     }
                 }
                 return false;
